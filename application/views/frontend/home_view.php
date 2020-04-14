@@ -9,7 +9,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="shortcut icon" href="<?php echo base_url().'theme/images/favicon.png'?>"/>
-	<meta name="description" content="OpenSource SOURCE CODE company profile hotel yang di develop oleh Jtech Setiadi">
+	<meta name="description" content="Aplikasi Punyacara">
     
 	<!-- META FOR IOS & HANDHELD -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
@@ -41,9 +41,9 @@
 <body>
 
     <!-- PRELOADER -->
-    <div id="preloader">
+    <!-- <div id="preloader">
         <span class="preloader-dot"></span>
-    </div>
+    </div> -->
     <!-- END / PRELOADER -->
 
     <!-- PAGE WRAP -->

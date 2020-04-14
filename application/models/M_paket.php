@@ -8,7 +8,7 @@ class M_paket extends CI_Model{
 
 	function get_all_paket(){
 		$hsl=$this->db->get('compare');
-		return $hsl;
+		return $hsl->result();
 	}
 
 	function simpan_paket($paket_type,$img_large,$img_thumb,$deskripsi,$paket_rate){

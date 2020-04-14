@@ -6,6 +6,11 @@ class M_fasilities extends CI_Model{
 		return $hsl;
 	}
 
+		function get_all_fasilitas(){
+		$hsl=$this->db->get('fasilitas');
+		return $hsl->result();
+	}
+
 	function simpan_fasilitas($nama,$deskripsi,$gambar){
 		$hsl=$this->db->query("INSERT INTO fasilitas (nama,gambar,detail) VALUES ('$nama','$gambar','$deskripsi')");
 		return $hsl;

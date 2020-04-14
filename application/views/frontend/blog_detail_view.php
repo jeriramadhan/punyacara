@@ -81,9 +81,9 @@
 <body> 
 
     <!-- PRELOADER -->
-    <div id="preloader">
+    <!-- <div id="preloader">
         <span class="preloader-dot"></span>
-    </div>
+    </div> -->
     <!-- END / PRELOADER -->
 
     <!-- PAGE WRAP -->
