@@ -1,6 +1,13 @@
 <?php
 class M_pengguna extends CI_Model{
 
+	  public function empty_response(){
+    $response['status']=502;
+    $response['error']=true;
+    $response['message']='Response failed';
+    return $response;
+  }
+
 	function get_all_pengguna(){
 		$hsl=$this->db->query("SELECT pengguna.*,IF(pengguna_jenkel='L','Laki-Laki','Perempuan') AS jenkel FROM pengguna");
 		return $hsl;	
@@ -53,6 +60,42 @@ class M_pengguna extends CI_Model{
 		$hsl=$this->db->query("SELECT * FROM pengguna where pengguna_id='$kode'");
 		return $hsl;
 	}
+
+	function get_pesan_semua(){
+		$all = $this->db->get("inbox")->result();
+    $response['status']=200;
+    $response['error']=false;
+    $response['person']=$all;
+    return $response;
+	}
+
+	  public function add_pesan($nama,$email,$subject,$pesan){
+
+    if(empty($nama) || empty($email) || empty($subject) || empty($pesan)){
+      return $this->empty_response();
+    }else{
+      $data = array(
+        "inbox_nama"=>$nama,
+        "inbox_email"=>$email,
+				"inbox_subject"=>$subject,
+				"inbox_pesan"=>$pesan
+      );
+      $insert = $this->db->insert("inbox", $data);
+
+      if($insert){
+        $response['status']=200;
+        $response['error']=false;
+        $response['message']='Data pesan ditambahkan.';
+        return $response;
+      }else{
+        $response['status']=502;
+        $response['error']=true;
+        $response['message']='Data pesan gagal ditambahkan.';
+        return $response;
+      }
+    }
+
+  }
 
 
 }
